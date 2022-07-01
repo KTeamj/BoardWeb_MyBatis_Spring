@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--  <properties resource="db.properties" />-->
+	<typeAliases>
+		<typeAlias type="com.springbook.biz.board.BoardVO" alias="board"></typeAlias>
+		<typeAlias type="com.springbook.biz.user.UserVO" alias="user"></typeAlias>
+	</typeAliases>
+	
+	<!--  Spring에선 다른곳에서 DB연결(DB연결 설정은 MyBatis Sprong과 연동할때
+			다른곳에서  <<여기서는 사용안함
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	 -->
+	 
+	<mappers>
+		<mapper resource="mappings/board-mapping.xml" />
+		<mapper resource="mappings/user-mapping.xml" />
+	</mappers>
+</configuration>
